@@ -1,8 +1,18 @@
 body {
   color: var(--text-color);
   background-color: var(--white);
-  font-family: "Roboto Mono", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 
 ul {
   list-style: none;
@@ -171,7 +181,7 @@ p {
   font-size: 16px;
   line-height: 1.5;
   margin: 0;
-  margin-bottom: 12px;
+  
 }
 
 .list {
@@ -180,19 +190,6 @@ p {
   padding-bottom: 120px;
 }
 
-.foot {
-  background-color: var(--text-color);
-  padding-top: 100px;
-  padding-bottom: 100px;
-}
-
-.pfoot {
-  color: var(--corn);
-  font-size: 16px;
-  line-height: 1.5;
-  width: 264px;
-  margin-top: 16px;
-}
 
 .btn-text {
   color: var(--navy-blue);
@@ -208,7 +205,6 @@ p {
 }
 
 .btn-text:active,
-.btn-text:hover,
 .btn-text:focus {
   color: var(--white);
   background-color: var(--navy-blue);
@@ -216,21 +212,23 @@ p {
   border-radius: 4px;
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
+.btn-text:hover {
+    color: var(--white);
+      background-color: var(--navy-blue);
+      border: 1px solid transparent;
+      border-radius: 4px;
+      box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+}
 
 .desk {
   font-weight: 600;
   font-size: 20px;
   line-height: 1.2;
-  margin-top: 8px;
+  margin-top: 0;
   margin-bottom: 8px;
 
 }
-/*.icon {
-  width: 64px;
-  height: 64px;
-  margin: 24px 100px;
-  color: #2e2f42;
-}*/
+
 
 .icon {
   width: 60px;
@@ -342,12 +340,6 @@ p {
   margin: 0;
 }
 
-/*.desk-text li:last-child {
-  margin-right: 156px;
-}
-.desk-text li:first-child {
-  margin-left: 156px;
-}*/
 .caption-foto {
   display: flex;
   justify-content: space-between;
@@ -375,14 +367,6 @@ p {
  
 }
 
-/*.project-card {
-  display: flex;
-  flex-wrap: wrap;
-}
-.project-card:not(:nth-child(3)) {
-  margin-right: 30px;
-}*/
-/*7 тема иконки */
 .actions::before {
   display: block;
   content: "";
@@ -408,17 +392,33 @@ p {
 
 
 .social {
-      display: flex;
-      padding: 0;
-      margin: 0;
-      justify-content: space-around;
-      align-items: center;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  justify-content: space-around;
+  align-items: center;
 }
 .social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 40px;
-    height: 40px;
+  height: 40px;
+  color: var(--cloud);
+  background-color: var(--navy-blue);
+  fill: currentColor;
+  border-radius: 50%;
+  border: none;
+}
+.social-team-link {
+  width: 16px;
+  height: 16px;
+  text-align: center;
 
 }
+
+
+
 .custo {
   display: flex;
   justify-content: space-between;
@@ -429,9 +429,11 @@ p {
   color: #8E8F99;
   border: 1px solid #8E8F99;
   border-radius: 4px;
+  fill: currentColor;
 }
 
-.link-custo:hover {
+.link-custo:hover,
+.link-custo:focus {
   color: var(--navy-blue);
   border: 1px solid var(--navy-blue);
 }
@@ -441,37 +443,83 @@ p {
   font-size: 36px;
   line-height: 1.2;
   text-align: center;
-  padding-bottom: 72px;
+  margin-bottom: 72px;
+  margin-top: 0;
 }
 .section-custo {
   padding-top: 120px;
   padding-bottom: 120px;
  }
- .icon-phone {
-  color: var(--text-color);
- }
-.icon-phone:active,
-.icon-phone:hover,
-.icon-phone:focus {
-  color: var(--navy-blue);
+
+
+
+
+
+/*футер*/
+.foot {
+  background-color: var(--text-color);
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
+.pfoot {
+  color: var(--corn);
+  font-size: 16px;
+  line-height: 1.5;
+  width: 264px;
+  margin-top: 16px;
+}
+
 .social-foot {
-  display: inline;
-  padding: 100px 0px 130px 120px;
-  width: 208px;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  justify-content: space-between;
+  align-items: center;
   
 }
-.text-foot {
+
+.title-foot {
   font-weight: 600;
   font-size: 16px;
   line-height: 1.5;
   color: var(--white);
   padding-bottom: 16px;
-}
-.foot-link {
-  display: flex;
-  justify-content: space-between;
-  width: 208px;
+  margin: 0;
+
 }
 
+.cell-foot {
+  width: 208px;
+  margin-left: 120px;
+ 
+}
+.foot-content {
+  display: flex;
+  align-items: baseline;
+ 
+}
+
+.social-footlink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: var(--cloud);
+  background-color: rgba(255, 255, 255, 0.1);
+  fill: currentColor;
+  border-radius: 50%;
+  border: none;
+}
+.social-footlink:hover,
+.social-footlink:focus,
+.social-footlink:active {
+  color: var(--cloud);
+  background-color: #31D0AA;
+}
+.foot-link {
+  width: 24px;
+  height: 24px;
+  text-align: center;
+}
 
