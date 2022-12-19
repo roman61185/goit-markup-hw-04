@@ -257,6 +257,9 @@ p {
   padding-bottom: 32px;
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
+.text-foto p {
+  margin-bottom: 12px;
+}
 
 
 .section-discription {
@@ -424,6 +427,9 @@ p {
   justify-content: space-between;
 }
 .link-custo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 168px;
   height: 88px;
   color: #8E8F99;
@@ -431,6 +437,11 @@ p {
   border-radius: 4px;
   fill: currentColor;
 }
+.link-custo-icon {
+  width: 104px;
+  height: 56px;
+  }
+
 
 .link-custo:hover,
 .link-custo:focus {
